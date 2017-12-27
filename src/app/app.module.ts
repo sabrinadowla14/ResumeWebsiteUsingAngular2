@@ -1,18 +1,19 @@
+import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
+import { AppComponent }  from './app.component';
+import { MsgComponent } from './msg.component';
+import { ProjectItemComponent }  from './project-item.component';
+import { ProjectDetailsComponent } from './project-details.component';
 
-import { AppComponent } from './app.component';
-
+import { SearchPipe } from './search.pipe';
 
 @NgModule({
+  imports: [BrowserModule, FormsModule],
   declarations: [
-    AppComponent
+  AppComponent, ProjectItemComponent, ProjectDetailsComponent, SearchPipe, MsgComponent
   ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

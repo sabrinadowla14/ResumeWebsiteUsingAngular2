@@ -25,3 +25,19 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+Project: My Resume
+I have used Angular 2 framework. While I was trying  to get a certificate in Angular2 from Lynda.com 
+I have created this website.
+codes are taken from Lynda.com.
+To see the entire project list you have to enter the space bar.
+If you click on any project it's going to show you the description of the project.
+The initial project was taken from -- https://angular.io/guide/quickstart
+Step 1. Set up the Development Environment
+## npm install -g @angular/cli
+Step 2. Create a new project
+## ng new my-resume
+Step 3: Serve the application
+## cd my-resume
+## ng serve --open
+

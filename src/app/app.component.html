@@ -1,20 +1,60 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="appTitle">
+    <h1 class="app-title">{{appTitle}}</h1>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
+
+<div class="appSummary">
+    <h3 class="app-summary">Expert in information technology and services industry with advanced skills expected in a {{jobPosition}}</h3>
+</div>
+<div class="appSkill">
+    <h2 class="app-skill">{{appSkill}}</h2>
+</div>
+
+<div class="skillItem cf">
+
+<ul class="skilllist cf">
+
+    <li class="skilllist cf"
+
+        *ngFor="let item of skills">
+        <skill-item class="content" [skill]=item></skill-item>
+
+
+    </li>
+</ul>
+</div>
+
+<div class="school search">
+    <h2 class="school-title">{{schoolTitle}}</h2>
+</div>
+
+<ul class="schoollist cf">
+
+    <li class="schoollist cf" *ngFor="let school of schools">
+        <h2 class="school-name">{{school.name}}</h2>
+        <h3 class="school-name">{{school.major}}</h3>
+
+    </li>
+
 </ul>
 
+<div class="card search">
+    <h2 class="search-headlines">{{projectTitle}}</h2>
+    <label class="search-label">Please enter space bar to see the list of Project...Search
+	 <span *ngIf="query"
+      [innerHTML]="' for: ' + query"></span></label>
+    <input class="search-input"
+      [(ngModel)]="query" placeholder="Enter Space Bar">
+</div>
+
+<ul class="projectlist cf" *ngIf="query">
+
+    <li class="projectlist-item cf"
+        (click)="showProject(item); query=''"
+              *ngFor="let item of (projects | search: query)">
+       <project-item class="content" [project]=item></project-item>
+
+    </li>
+
+</ul>
+
+<project-details *ngIf="currentProject" [project]="currentProject"></project-details>
